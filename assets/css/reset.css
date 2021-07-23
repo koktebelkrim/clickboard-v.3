@@ -47,8 +47,8 @@ table {
 } */
 
 .tox .tox-menubar {
-	background: #CECECE !important;
-	display: none !important;
+	background: #ececec !important;
+	/* display: none !important; */
 }
 
 .tox-statusbar {
