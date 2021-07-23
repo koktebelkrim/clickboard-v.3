@@ -42,9 +42,9 @@ table {
 	border-spacing: 0;
 }
 
-.tox {
+/* .tox {
 	position: static !important;
-}
+} */
 
 .tox .tox-menubar {
 	background: #CECECE !important;
