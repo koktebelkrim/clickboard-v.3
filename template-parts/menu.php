@@ -45,5 +45,12 @@
         </a>
         <a class="menu__link" href="#">Инфо</a>
       </li>
+
+      <li class="menu__item">
+        <a href="settings.php">
+          <img class="menu__icon" src="assets/img/icons/settings.png" alt="info">
+        </a>
+        <a class="menu__link" href="settings.php">Управление</a>
+      </li>
     </ul>
   </nav>

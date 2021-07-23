@@ -103,3 +103,23 @@ try {
 } catch {
     console.log('Edit button not found')
 }
+
+try {
+    let
+        bootsLink = document.querySelectorAll('.modal__boots-link'),
+        bootsInfo = document.querySelectorAll('.modal__boots-info');
+    
+    console.log(bootsInfo);
+    
+    bootsLink.forEach(function(item, i) {
+        item.addEventListener('click', () => {
+            bootsInfo.forEach(item => {
+                item.classList.remove('modal__boots-info_active');
+            })
+            bootsInfo[i].classList.toggle('modal__boots-info_active');
+        })
+    })
+
+} catch {
+    console.log('Info links not found')
+}

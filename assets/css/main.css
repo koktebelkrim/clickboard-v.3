@@ -1,5 +1,4 @@
 .page {
-  display: flex;
   background: #1F1F1F;
   font-family: "Montserrat", sans-serif;
   background-image: url(../img/bg_1.png); }
@@ -442,5 +441,10 @@
   .archive__notes {
     width: 100%;
     border-radius: 5px; }
+
+.settings {
+  width: 100%; }
+  .settings__content {
+    margin: 0 auto; }
 
 /*# sourceMappingURL=main.css.map */

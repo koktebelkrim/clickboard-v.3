@@ -18,6 +18,46 @@
     transform: scale(1.2);
     transition: all 0.6s cubic-bezier(0.55, 0, 0.1, 1);
   }
+
+  .main__modal {
+    width: 85%;
+  }
+
+  .main__modal-content {
+    width: 100%;
+  }
+
+  .modal__title {
+    font-family: "Play", sans-serif;
+    font-weight: 600;
+    text-align: left;
+    font-size: 1.3em;
+    margin: 0 0 20px 0;
+  }
+
+  .modal__boots-link {
+    color: rgb(24, 24, 24);
+    display: block;
+    margin: 5px 0;
+  }
+
+  .modal__boots-info {
+    margin: 5px 0;
+    box-sizing: border-box;
+    padding: 5px 10px;
+    opacity: 0;
+    height: 0px;
+    overflow: hidden;
+    background: rgb(209, 209, 209);
+    transition: .3s ease;
+    border-radius: 5px;
+  }
+    .modal__boots-info_active {
+      opacity: 1;
+      height: auto;
+    }
+  
+
   .modal .close-modal {
     position: absolute;
     cursor: pointer;
