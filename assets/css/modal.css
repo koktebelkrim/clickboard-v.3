@@ -42,6 +42,7 @@
   }
 
   .modal__boots-info {
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
     margin: 5px 0;
     box-sizing: border-box;
     padding: 5px 10px;

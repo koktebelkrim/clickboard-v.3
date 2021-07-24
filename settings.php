@@ -56,9 +56,40 @@
     <main class="settings">
       <div class="content-wrap settings__content">
         <h2 class="title">Панель управления контентом</h2>
-        <form action="add_content.php?content=boots" method="POST">
-          <textarea class="form__text" name="content"></textarea>
+        <form action="assets/php/content/add_content.php?category=boots-content" method="POST">
+          <input class="form__title" type="text" name="title" placeholder="Название модели">
+          <textarea class="form__text" name="content" placeholder="Описание"></textarea>
+          <button class="form__btn settings__btn" type="submit">Сохранить</button>
         </form>
+
+        <div class="settings__boots-info">
+          <?php
+            
+            require 'assets/php/app_config.php';
+
+            $mysql = new mysqli(DATABASE_HOST, DATABASE_USER, DATABASE_PASSWORD, DATABASE_NAME);
+            $result = $mysql->query("SELECT * FROM `boots-content` ORDER BY `id` DESC");
+            if($result->num_rows > 0) {
+              while ($row = $result->fetch_assoc()) {
+                echo "
+                <div class='settings__item-holder'>
+                    <div class='settings__item'>" . $row["title"] . "</div>
+                    <div class='settings__item-content'>" .  $row["content"] . "</div>
+
+                    <form class='form-holder' action='assets/php/content/edit_content.php?id=".  $row["id"] ."&category=boots-content' method='POST'>
+                      <div class='link-holder'>
+                        <a class='settings__edit' href='#'>Редактировать</a>
+                        <a class='settings__delete' href='assets/php/content/delete_content.php?id=".  $row["id"] ."&category=boots-content'>Удалить</a>
+                      </div>
+                    </form>
+                </div>
+                ";
+              }
+            }
+            $mysql->close(); 
+
+          ?>
+        </div>
       </div>
     </main>
 

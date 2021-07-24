@@ -264,19 +264,32 @@
       <div class="modal-content main__modal-content">
         <h3 class="modal__title">Размерная сетка обуви garsing</h3>
 
-        <div class="modal__item">
+        <?php
+          require 'assets/php/app_config.php';
+
+          $mysql = new mysqli(DATABASE_HOST, DATABASE_USER, DATABASE_PASSWORD, DATABASE_NAME);
+          $result = $mysql->query("SELECT * FROM `boots-content` ORDER BY `id` DESC");
+          if($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+              echo "
+              <div class='modal__item'>
+                  <a class='modal__boots-link' href='#'>" . $row["title"] . "</a>
+                  <div class='modal__boots-info'>
+                  " . $row["content"] . "
+                  </div>
+              </div>
+              ";
+            }
+          }
+          $mysql->close();
+      ?>
+
+        <!-- <div class="modal__item">
           <a class="modal__boots-link" href="#">БОТИНКИ С ВЫСОКИМИ БЕРЦАМИ 1700 «RANGER» (З)</a>
           <div class="modal__boots-info">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore id libero consectetur sunt cupiditate adipisci laboriosam officia explicabo, odit autem cum repellat quis neque totam illo nemo. Atque, minima excepturi.
-            Eligendi veritatis facilis, eum repellat reprehenderit minima placeat dolore quod quibusdam aut numquam consequuntur suscipit et beatae! Iure nisi asperiores modi laboriosam cum, consectetur quidem quae earum, mollitia id porro!</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore id libero consectetur sunt cupiditate adipisci laboriosam officia explicabo, odit autem cum repellat quis neque totam illo nemo. Atque, minima excepturi.
-            Eligendi veritatis facilis, eum repellat reprehenderit minima placeat dolore quod quibusdam aut numquam consequuntur suscipit et beatae! Iure nisi asperiores modi laboriosam cum, consectetur quidem quae earum, mollitia id porro!</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore id libero consectetur sunt cupiditate adipisci laboriosam officia explicabo, odit autem cum repellat quis neque totam illo nemo. Atque, minima excepturi.
-            Eligendi veritatis facilis, eum repellat reprehenderit minima placeat dolore quod quibusdam aut numquam consequuntur suscipit et beatae! Iure nisi asperiores modi laboriosam cum, consectetur quidem quae earum, mollitia id porro!</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore id libero consectetur sunt cupiditate adipisci laboriosam officia explicabo, odit autem cum repellat quis neque totam illo nemo. Atque, minima excepturi.
-            Eligendi veritatis facilis, eum repellat reprehenderit minima placeat dolore quod quibusdam aut numquam consequuntur suscipit et beatae! Iure nisi asperiores modi laboriosam cum, consectetur quidem quae earum, mollitia id porro!</p>
+            
           </div>
-        </div>
+        </div> -->
         
       </div>
     </div>

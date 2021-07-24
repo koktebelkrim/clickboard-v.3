@@ -22,6 +22,17 @@ try {
     //Инициализация текстового редактора
     tinymce.init({
         selector: '.form__text',
+        height: 500,
+        plugins: [
+                    'advlist autolink lists link image charmap print preview anchor',
+                    'searchreplace visualblocks code fullscreen',
+                    'insertdatetime media table paste code help wordcount'
+                 ],
+        toolbar: 'undo redo | formatselect | ' +
+                 'bold italic backcolor | alignleft aligncenter ' +
+                 'alignright alignjustify | bullist numlist outdent indent | ' +
+                 'removeformat | help',
+        content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
     });
 
 } catch {
@@ -95,6 +106,16 @@ try {
 
             tinymce.init({
                 selector: '.edit-area',
+                plugins: [
+                            'advlist autolink lists link image charmap print preview anchor',
+                            'searchreplace visualblocks code fullscreen',
+                            'insertdatetime media table paste code help wordcount'
+                         ],
+                toolbar: 'undo redo | formatselect | ' +
+                         'bold italic backcolor | alignleft aligncenter ' +
+                         'alignright alignjustify | bullist numlist outdent indent | ' +
+                         'removeformat | help',
+                content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
             });
 
         })
@@ -109,17 +130,54 @@ try {
         bootsLink = document.querySelectorAll('.modal__boots-link'),
         bootsInfo = document.querySelectorAll('.modal__boots-info');
     
-    console.log(bootsInfo);
-    
     bootsLink.forEach(function(item, i) {
         item.addEventListener('click', () => {
-            bootsInfo.forEach(item => {
-                item.classList.remove('modal__boots-info_active');
-            })
             bootsInfo[i].classList.toggle('modal__boots-info_active');
         })
     })
 
 } catch {
     console.log('Info links not found')
+}
+
+try {
+    let
+        content      = document.querySelectorAll('.settings__item-content'),
+        formHolder   = document.querySelectorAll('.form-holder'),
+        linkHolder   = document.querySelectorAll('.link-holder'),
+        editLink     = document.querySelectorAll('.settings__edit'),
+        deleteLink   = document.querySelectorAll('.settings__delete');
+
+        editLink.forEach(function(item, i) {
+        item.addEventListener('click', (e) => {
+            editArea = document.createElement('textarea');
+            editArea.setAttribute('name', 'edited-content');
+            editArea.setAttribute('class', 'settings-edit');
+            editArea.value = content[i].innerHTML;
+            formHolder[i].insertBefore(editArea, linkHolder[i]);
+            tinymce.init({
+                selector: '.settings-edit',
+                height: 500,
+                plugins: [
+                            'advlist autolink lists link image charmap print preview anchor',
+                            'searchreplace visualblocks code fullscreen',
+                            'insertdatetime media table paste code help wordcount'
+                         ],
+                toolbar: 'undo redo | formatselect | ' +
+                         'bold italic backcolor | alignleft aligncenter ' +
+                         'alignright alignjustify | bullist numlist outdent indent | ' +
+                         'removeformat | help',
+                content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
+            });
+            item.remove();
+            saveBtn = document.createElement('button');
+            saveBtn.setAttribute('type', 'submit');
+            saveBtn.textContent = 'Сохранить';
+            linkHolder[i].insertBefore(saveBtn, deleteLink[i]);
+        })
+    })
+
+    
+} catch {
+    console.log('This is not settings page')
 }
