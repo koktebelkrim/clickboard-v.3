@@ -56,8 +56,10 @@
     <main class="settings">
       <div class="content-wrap settings__content">
         <h2 class="title">Панель управления контентом</h2>
-        <form action="add_content.php?content=boots" method="POST">
-          <textarea class="form__text" name="content"></textarea>
+        <form action="assets/php/content/add_content.php?category=boots-content" method="POST">
+          <input class="form__title" type="text" name="title" placeholder="Название модели">
+          <textarea class="form__text" name="content" placeholder="Описание"></textarea>
+          <button class="form__btn settings__btn" type="submit">Сохранить</button>
         </form>
       </div>
     </main>
