@@ -86,7 +86,7 @@
                 ";
               }
             }
-            $mysql->close();
+            $mysql->close(); 
 
           ?>
         </div>
