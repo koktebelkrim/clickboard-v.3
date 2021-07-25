@@ -1,0 +1,1 @@
+sass --watch C:\MAMP\htdocs\clickboard-v.3\assets\sass\main.sass:C:\MAMP\htdocs\clickboard-v.3\assets\css\main.css
