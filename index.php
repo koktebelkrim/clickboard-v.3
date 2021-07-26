@@ -262,7 +262,7 @@
       </a>
 
       <div class="modal-content main__modal-content">
-        <h3 class="modal__title">Размерная сетка обуви garsing</h3>
+        <h3 class="modal__title">Размерная сетка обуви garsing</h3> 
 
         <?php
           require 'assets/php/app_config.php';
