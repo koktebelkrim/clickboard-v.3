@@ -262,7 +262,7 @@
       </a>
 
       <div class="modal-content main__modal-content">
-        <h3 class="modal__title">Размерная сетка обуви garsing</h3>
+        <h3 class="modal__title">Размерная сетка обуви garsing</h3> 
 
         <?php
           require 'assets/php/app_config.php';
@@ -273,7 +273,7 @@
             while ($row = $result->fetch_assoc()) {
               echo "
               <div class='modal__item'>
-                  <a class='modal__boots-link' href='#'>" . $row["title"] . "</a>
+                  <a class='modal__boots-link' href='#'>" . $row["title"] . "<img class='arrow-down' src='assets/img/icons/down-arrow.svg'></a>
                   <div class='modal__boots-info'>
                   " . $row["content"] . "
                   </div>
