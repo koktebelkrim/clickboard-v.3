@@ -1,9 +1,16 @@
 //Прилипающее меню
 let
-    menu = document.querySelector('.menu');
+    menu        = document.querySelector('.menu'),
+    menuOverlay = document.querySelector('.menu-overlay');
 
 window.addEventListener('scroll', () => {
     menu.style.top = window.scrollY + 'px';
+})
+menu.addEventListener('mouseenter', () => {
+    menuOverlay.classList.add('menu-overlay_active');
+})
+menu.addEventListener('mouseleave', () => {
+    menuOverlay.classList.remove('menu-overlay_active');
 })
 
 //Текущее меню
@@ -132,6 +139,7 @@ try {
     
     bootsLink.forEach(function(item, i) {
         item.addEventListener('click', () => {
+            item.classList.toggle('modal__boots-link_active');
             bootsInfo[i].classList.toggle('modal__boots-info_active');
         })
     })

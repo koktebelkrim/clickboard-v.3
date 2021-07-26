@@ -36,26 +36,47 @@
   }
 
   .modal__boots-link {
+    position: relative;
+    background: rgb(167, 167, 167);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: rgb(24, 24, 24);
-    display: block;
-    margin: 5px 0;
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    padding: 8px;
+    text-decoration: none;
   }
+
+  .arrow-down {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    right: 15px;
+  }
+
+    .modal__boots-link_active {
+      background: #F17201;
+      color: #fff;
+    }
+    .modal__boots-link_active .arrow-down {
+      transform: rotate(90deg);
+    }
 
   .modal__boots-info {
     font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
-    margin: 5px 0;
     box-sizing: border-box;
     padding: 5px 10px;
     opacity: 0;
     height: 0px;
     overflow: hidden;
-    background: rgb(209, 209, 209);
+    background: rgb(189, 188, 188);
     transition: .3s ease;
-    border-radius: 5px;
+    
   }
     .modal__boots-info_active {
       opacity: 1;
       height: auto;
+      margin: 0 0 15px 0
     }
   
 

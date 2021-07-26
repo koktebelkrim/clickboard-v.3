@@ -69,3 +69,18 @@
         transition: .5s ease
         transition-delay: .2s
 
+.menu-overlay
+    position: fixed
+    opacity: 0
+    top: 0 
+    left: 0 
+    bottom: 0
+    right: 0
+    z-index: -1
+    background: #363636
+    transition: .6s ease
+
+    &_active
+        opacity: 0.8
+        z-index: 100
+

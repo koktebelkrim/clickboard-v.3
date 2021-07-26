@@ -63,6 +63,20 @@
     transition: 0.5s ease;
     transition-delay: 0.2s; }
 
+.menu-overlay {
+  position: fixed;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+  background: #363636;
+  transition: 0.6s ease; }
+  .menu-overlay_active {
+    opacity: 0.8;
+    z-index: 100; }
+
 .clickboard {
   order: 2;
   width: 100%; }
