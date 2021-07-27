@@ -130,7 +130,7 @@
         <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js'></script>
         <script src="assets/js/common.js"></script>
         <script src="assets/js/modal.js"></script>
-        <!-- <script src="assets/js/notes.js"></script> -->
+        <script src="assets/js/search.js"></script>
 
     <?php endif; ?>
 
