@@ -13,20 +13,19 @@ menu.addEventListener('mouseleave', () => {
     menuOverlay.classList.remove('menu-overlay_active');
 })
 
-//Текущее меню
+
 let
     menuItem = document.querySelectorAll('.menu__item'),
     menuLink = document.querySelectorAll('.menu__link'),
     page = location.pathname.substring(16);
 
-menuLink.forEach(function (item, index) {
+menuLink.forEach(function (item, index) { //Текущее меню
     if (item.getAttribute('href') == page) {
         menuItem[index].classList.add('menu__item_current');
     }
 })
 
-try {
-    //Инициализация текстового редактора
+try { //Инициализация текстового редактора
     tinymce.init({
         selector: '.form__text',
         height: 200,
@@ -46,47 +45,7 @@ try {
     console.log('Page doesn`t have text editor')
 }
 
-try {
-
-    let
-        note = document.querySelectorAll('.result__holder'),
-        noteTitle = document.querySelectorAll('.result__title'),
-        searchBtn = document.querySelector('.search__btn'),
-        searchInput = document.querySelector('.search__input');
-
-    searchBtn.addEventListener('click', () => {
-        for (let i = 0; i < noteTitle.length; i++) {
-            if (!noteTitle[i].textContent.indexOf(searchInput.value)) {
-                for (let j = 0; j < note.length; j++) {
-                    note[j].style.display = 'none';
-                }
-                note[i].style.display = 'block';
-            }
-        }
-        searchInput.value = '';
-    })
-
-    window.addEventListener('keydown', event => {
-        if (event.key == 'Enter') {
-            for (let i = 0; i < noteTitle.length; i++) {
-                if (!noteTitle[i].textContent.indexOf(searchInput.value)) {
-                    for (let j = 0; j < note.length; j++) {
-                        note[j].style.display = 'none';
-                    }
-                    note[i].style.display = 'block';
-                }
-            }
-            searchInput.value = '';
-        }
-
-    })
-
-} catch {
-    console.log('Page doesn`t have search');
-}
-
-try {
-    
+try { //Редактирование записи
     let 
         editBtn = document.querySelectorAll('.edit'),
         saveBtn = document.querySelectorAll('.save'),
@@ -132,7 +91,7 @@ try {
     console.log('Edit button not found')
 }
 
-try {
+try { //Дропдаун на ссылку с обувью
     let
         bootsLink = document.querySelectorAll('.modal__boots-link'),
         bootsInfo = document.querySelectorAll('.modal__boots-info');
@@ -148,7 +107,7 @@ try {
     console.log('Info links not found')
 }
 
-try {
+try { //Редактирование записей с обувью
     let
         content      = document.querySelectorAll('.settings__item-content'),
         formHolder   = document.querySelectorAll('.form-holder'),

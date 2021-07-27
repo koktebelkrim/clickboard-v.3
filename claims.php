@@ -63,7 +63,7 @@
                         <button class="search__btn">
                             <img class="search__icon" src="assets/img/icons/search.png">
                         </button>
-                        <input type="text" class="search__input" placeholder="Поиск">
+                        <input type="text" class="search__input" id="claims__search" placeholder="Поиск">
                     </div>
                 </div>
 
@@ -129,6 +129,7 @@
         <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js'></script>
         <script src="assets/js/common.js"></script>
         <script src="assets/js/modal.js"></script>
+        <script src="assets/js/search.js"></script>
 
     <?php endif; ?>
 
