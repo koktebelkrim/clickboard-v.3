@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Play:wght@400;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 .page {
   background: #1F1F1F;
   font-family: "Montserrat", sans-serif;
@@ -388,6 +389,7 @@
 .search {
   display: flex; }
   .search__btn {
+    position: relative;
     width: 35px;
     height: 35px;
     border: none;
@@ -395,9 +397,14 @@
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
     cursor: pointer; }
-  .search__icon {
-    width: 20px;
-    height: 20px; }
+    .search__btn::before {
+      content: url(../img/icons/search_small.png);
+      position: absolute;
+      display: block;
+      max-width: 100%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%); }
   .search__input {
     padding: 0 0 0 10px;
     margin: 0;
