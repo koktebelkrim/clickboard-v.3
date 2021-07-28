@@ -1,22 +1,3 @@
-// document.querySelector('#claims__search').oninput = function() {
-//     let val    = this.value.trim();
-//     let titles = document.querySelectorAll('.result__title');
-//     let note   = document.querySelectorAll('.result__holder');
-//     if (val != '') {
-//         titles.forEach(function(item, index) {
-//             if (item.innerText.search(val) == -1) {
-//                 note[index].style.display = 'none';
-//             } else {
-//                 note[index].style.display = 'block';
-//             }
-//         });
-//     } else {
-//         titles.forEach(function(item, index) {
-//             note[index].style.display = 'block';
-//         });
-//     }
-// }
-
 let body = document.querySelector('body');
 if (body.dataset.note == 'fast-note') {
 
