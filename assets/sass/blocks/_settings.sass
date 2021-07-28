@@ -10,12 +10,41 @@
         width: 100px
         display: block
 
-    &__boots-info
+    &__info
+        height: 0
+        padding: 0
+        opacity: 0
+        overflow: hidden
         width: 100%
         border-radius: 5px
-        padding: 10px
         box-sizing: border-box
         background: #afafaf
+        transition: .5s ease
+
+        &_active
+            padding: 10px
+            height: auto
+            opacity: 1
+
+    &__form
+        height: 0
+        padding: 0
+        opacity: 0
+        overflow: hidden
+        transition: .5s ease
+
+        &_active
+            padding: 10px
+            height: auto
+            opacity: 1
+
+    &__link,
+    &__link-form
+        display: inline-block
+        margin: 10px 0
+        color: #b1b1b1
+        text-decoration: none
+        border-bottom: 1px dotted #b1b1b1
 
     &__item-holder
         margin: 10px 0

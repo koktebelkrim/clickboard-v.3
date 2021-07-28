@@ -113,38 +113,57 @@ try { //Редактирование записей с обувью
         formHolder   = document.querySelectorAll('.form-holder'),
         linkHolder   = document.querySelectorAll('.link-holder'),
         editLink     = document.querySelectorAll('.settings__edit'),
-        deleteLink   = document.querySelectorAll('.settings__delete');
+        deleteLink   = document.querySelectorAll('.settings__delete'),
+
+        deployBoots  = document.querySelectorAll('.settings__link'),
+        infoBlock    = document.querySelectorAll('.settings__info'),
+        deployForm   = document.querySelectorAll('.settings__link-form'),
+        addInfo      = document.querySelectorAll('.settings__form');
 
         editLink.forEach(function(item, i) {
-        item.addEventListener('click', (e) => {
-            editArea = document.createElement('textarea');
-            editArea.setAttribute('name', 'edited-content');
-            editArea.setAttribute('class', 'settings-edit');
-            editArea.value = content[i].innerHTML;
-            formHolder[i].insertBefore(editArea, linkHolder[i]);
-            tinymce.init({
-                selector: '.settings-edit',
-                height: 500,
-                plugins: [
-                            'advlist autolink lists link image charmap print preview anchor',
-                            'searchreplace visualblocks code fullscreen',
-                            'insertdatetime media table paste code help wordcount'
-                         ],
-                toolbar: 'undo redo | formatselect | ' +
-                         'bold italic backcolor | alignleft aligncenter ' +
-                         'alignright alignjustify | bullist numlist outdent indent | ' +
-                         'removeformat | help',
-                content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
-            });
-            item.remove();
-            saveBtn = document.createElement('button');
-            saveBtn.setAttribute('type', 'submit');
-            saveBtn.textContent = 'Сохранить';
-            linkHolder[i].insertBefore(saveBtn, deleteLink[i]);
+            item.addEventListener('click', (e) => {
+                e.preventDefault();
+                editArea = document.createElement('textarea');
+                editArea.setAttribute('name', 'edited-content');
+                editArea.setAttribute('class', 'settings-edit');
+                editArea.value = content[i].innerHTML;
+                formHolder[i].insertBefore(editArea, linkHolder[i]);
+                tinymce.init({
+                    selector: '.settings-edit',
+                    height: 500,
+                    plugins: [
+                                'advlist autolink lists link image charmap print preview anchor',
+                                'searchreplace visualblocks code fullscreen',
+                                'insertdatetime media table paste code help wordcount'
+                            ],
+                    toolbar: 'undo redo | formatselect | ' +
+                            'bold italic backcolor | alignleft aligncenter ' +
+                            'alignright alignjustify | bullist numlist outdent indent | ' +
+                            'removeformat | help',
+                    content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
+                });
+                item.remove();
+                saveBtn = document.createElement('button');
+                saveBtn.setAttribute('type', 'submit');
+                saveBtn.textContent = 'Сохранить';
+                linkHolder[i].insertBefore(saveBtn, deleteLink[i]);
+            })
         })
-    })
 
-    
+        deployBoots.forEach(function(item, i) {
+            item.addEventListener('click', (e) => {
+                e.preventDefault();
+                infoBlock[i].classList.toggle('settings__info_active');
+            })
+        })
+
+        deployForm.forEach(function(item, i) {
+            item.addEventListener('click', (e) => {
+                e.preventDefault();
+                addInfo[i].classList.toggle('settings__form_active');
+            })
+        })
+        
 } catch {
     console.log('This is not settings page')
 }
