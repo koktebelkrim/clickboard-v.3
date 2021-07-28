@@ -28,13 +28,17 @@
     <main class="settings">
       <div class="content-wrap settings__content">
         <h2 class="title">Панель управления контентом</h2>
-        <form action="assets/php/content/add_content.php?category=boots-content" method="POST">
+
+        <h3 class="title">Обувь</h3>
+        <a class="settings__link-form" href="#">Добавить модель</a>
+        <form class="form settings__form" action="assets/php/content/add_content.php?category=boots-content" method="POST">
           <input class="form__title" type="text" name="title" placeholder="Название модели">
           <textarea class="form__text" name="content" placeholder="Описание"></textarea>
           <button class="form__btn settings__btn" type="submit">Сохранить</button>
         </form>
 
-        <div class="settings__boots-info">
+        <a class="settings__link" href="#">Развернуть список</a>
+        <div class="settings__info">
           <?php
             
             require 'assets/php/app_config.php';
