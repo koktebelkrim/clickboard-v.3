@@ -3,17 +3,10 @@ let
     menu        = document.querySelector('.menu'),
     menuOverlay = document.querySelector('.menu-overlay');
 
-window.addEventListener('scroll', () => {
-    menu.style.top = window.scrollY + 'px';
-})
-menu.addEventListener('mouseenter', () => {
-    menuOverlay.classList.add('menu-overlay_active');
-})
-menu.addEventListener('mouseleave', () => {
-    menuOverlay.classList.remove('menu-overlay_active');
-})
-
-
+window.addEventListener('scroll', () => {menu.style.top = window.scrollY + 'px';})
+menu.addEventListener('mouseenter', () => {menuOverlay.classList.add('menu-overlay_active');})
+menu.addEventListener('mouseleave', () => {menuOverlay.classList.remove('menu-overlay_active');})
+    
 let
     menuItem = document.querySelectorAll('.menu__item'),
     menuLink = document.querySelectorAll('.menu__link'),
@@ -24,6 +17,37 @@ menuLink.forEach(function (item, index) { //Текущее меню
         menuItem[index].classList.add('menu__item_current');
     }
 })
+
+try {
+    const
+        fieldset    = document.querySelectorAll('.fieldset-template'),
+        fieldsetBtn = document.querySelectorAll('.fieldset__succes');
+
+    fieldsetBtn.forEach((item, i) => {
+        item.addEventListener('click', () => {
+            let 
+                succes = document.createElement('div');
+                succes.classList.add('succes-message');
+                succes.innerHTML = '<img class="succes-message__icon" src="https://image.flaticon.com/icons/png/512/753/753318.png">'
+                fieldset[i].appendChild(succes);
+                setTimeout(()=>{
+                    succes.classList.add('succes-message_active');
+                }, 100)
+                setTimeout(()=>{
+                    succes.classList.remove('succes-message_active');
+                }, 800)
+                setTimeout(()=>{
+                    fieldset[i].removeChild(succes);
+                }, 1000)
+
+        })
+    })
+    
+
+
+} catch {
+    console.log('This is not index page');
+}
 
 try { //Инициализация текстового редактора
     tinymce.init({

@@ -130,7 +130,6 @@
     
     <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js'></script>
     <script src="assets/js/lib/clickboard.min.js"></script>
-    <script src="assets/js/lib/Date.format.min.js"></script>
     <script src="assets/js/common.js"></script>
     <script src="assets/js/templates.js"></script>
     <script src="assets/js/outcall.js"></script>

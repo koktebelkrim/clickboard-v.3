@@ -28,7 +28,7 @@
                 График смен
             </h2>
             <iframe class="graph__frame"
-                src="https://planimum.ru/schedule/display/2021/07/cdeeb298c886425a8d45831b20ad2fa4/ "></iframe>
+                src="https://planimum.ru/schedule/display/2021/08/9409c31bdad04f099417e71228d2e751/ "></iframe>
         </div>
     </main>
 
